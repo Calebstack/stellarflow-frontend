@@ -4,11 +4,11 @@
   "private": true,
   "sideEffects": false,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build && node scripts/check-bundle-size.js",
-    "build:analyze": "ANALYZE=true next build",
-    "build:strict": "next build && node scripts/check-bundle-size.js --strict",
-    "start": "next start",
+    "dev": "node init && next dev",
+    "build": "node init && next build && node scripts/check-bundle-size.js",
+    "build:analyze": "node init && ANALYZE=true next build",
+    "build:strict": "node init && next build && node scripts/check-bundle-size.js --strict",
+    "start": "node init && next start",
     "lint": "eslint",
     "test": "node scripts/test-lang-cache.js",
     "analyze": "cross-env ANALYZE=true npm run build"
